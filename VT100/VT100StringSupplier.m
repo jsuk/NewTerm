@@ -1,7 +1,7 @@
 // VT100RowStringSupplier.m
 // MobileTerminal
 
-@import CoreText;
+#import <CoreText/CoreText.h>
 
 #import "VT100StringSupplier.h"
 #import "VT100ColorMap.h"
@@ -112,7 +112,7 @@
 			if (eol || ![color isEqual:lastColor]) {
 				if (lastColorIndex != -1) {
 					int length = j - lastColorIndex;
-					[attributedString addAttribute:NSForegroundColorAttributeName value:lastColor range:NSMakeRange(startOffset + lastColorIndex, length)];
+					[attributedString addAttribute:kCTForegroundColorAttributeName value:lastColor range:NSMakeRange(startOffset + lastColorIndex, length)];
 				}
 
 				if (!eol) {

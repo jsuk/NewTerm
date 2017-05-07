@@ -49,31 +49,31 @@
 	self = [self init];
 	
 	if (self) {
-		if (dictionary[@"Background"]) {
+		if ([dictionary valueForKey:@"Background"]) {
 			[_background release];
-			_background = [[self _colorFromArray:dictionary[@"Background"]] retain];
+			_background = [[self _colorFromArray:[dictionary valueForKey:@"Background"]] retain];
 		}
 		
-		if (dictionary[@"Text"]) {
+		if ([dictionary valueForKey:@"Text"]) {
 			[_foreground release];
-			_foreground = [[self _colorFromArray:dictionary[@"Text"]] retain];
+			_foreground = [[self _colorFromArray:[dictionary valueForKey:@"Text"]] retain];
 		}
 		
-		if (dictionary[@"BoldText"]) {
+		if ([dictionary valueForKey:@"BoldText"]) {
 			[_foregroundBold release];
-			_foregroundBold = [[self _colorFromArray:dictionary[@"BoldText"]] retain];
+			_foregroundBold = [[self _colorFromArray:[dictionary valueForKey:@"BoldText"]] retain];
 		}
 		
-		if (dictionary[@"Cursor"]) {
+		if ([dictionary valueForKey:@"Cursor"]) {
 			[_foregroundCursor release];
-			_foregroundCursor = [[self _colorFromArray:dictionary[@"Cursor"]] retain];
+			_foregroundCursor = [[self _colorFromArray:[dictionary valueForKey:@"Cursor"]] retain];
 			
 			[_backgroundCursor release];
-			_backgroundCursor = [[self _colorFromArray:dictionary[@"Cursor"]] retain];
+			_backgroundCursor = [[self _colorFromArray:[dictionary valueForKey:@"Cursor"]] retain];
 		}
 		
-		if (dictionary[@"Dark"]) {
-			_isDark = ((NSNumber *)dictionary[@"Dark"]).boolValue;
+		if ([dictionary valueForKey:@"Dark"]) {
+			_isDark = ((NSNumber *)[dictionary valueForKey:@"Dark"]).boolValue;
 		}
 	}
 	
@@ -85,7 +85,7 @@
 		return nil;
 	}
 	
-	return [UIColor colorWithRed:((NSNumber *)array[0]).floatValue / 255.f green:((NSNumber *)array[1]).floatValue / 255.f blue:((NSNumber *)array[2]).floatValue / 255.f alpha:1.f];
+	return [UIColor colorWithRed:((NSNumber *)[array objectAtIndex:0]).floatValue / 255.f green:((NSNumber *)[array objectAtIndex:1]).floatValue / 255.f blue:((NSNumber *)[array objectAtIndex:2]).floatValue / 255.f alpha:1.f];
 }
 
 - (void) dealloc {

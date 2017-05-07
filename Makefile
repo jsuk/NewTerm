@@ -1,5 +1,7 @@
 export TARGET = iphone:clang:latest:8.0
 
+ARCHS = armv7
+
 include $(THEOS)/makefiles/common.mk
 
 SUBPROJECTS = VT100 NewTerm prefs

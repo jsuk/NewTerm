@@ -3,7 +3,7 @@
 //
 //
 
-@import CoreText;
+#import <CoreText/CoreText.h>
 
 @interface FontMetrics : NSObject
 

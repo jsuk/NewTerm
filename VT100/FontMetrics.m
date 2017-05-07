@@ -11,7 +11,7 @@
 	if (self) {
 		_font = [uiFont retain];
 		
-		CTFontRef ctFont = (__bridge CTFontRef)_font;
+		CGFontRef ctFont = (__bridge CGFontRef)_font;
 		NSAssert(ctFont != NULL, @"Error in CTFontCreateWithName");
 		
 		// This creates a CoreText line that isn't drawn, but used to get the

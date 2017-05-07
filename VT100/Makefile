@@ -1,5 +1,7 @@
 include $(THEOS)/makefiles/common.mk
 
+ARCHS = armv7
+
 FRAMEWORK_NAME = VT100
 VT100_FILES = $(wildcard *.m)
 VT100_FRAMEWORKS = CoreGraphics CoreText QuartzCore UIKit
